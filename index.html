@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calcualtor js</title>
+</head>
+<body>
+    <form>
+        value one: <input type="text" id="value1"> <br> <br> 
+        value two: <input type="text" id="value2"> <br> <br> 
+        <select id="operate">
+            <option value="add" id="add">Add</option>
+            <option value="sub" id="sub">Sub</option>
+            <option value="divs" id="divs">Divition</option>
+            <option value="mul" id="mul">Multiplication</option>
+        </select>
+        <button type="button" onclick="calc()">Check</button>
+    </form>
+    <div id="resultPrev"></div>
+
+
+    <script>
+        function calc() {
+            var val1 = parseInt(document.querySelector('#value1').value);
+            var val2 = parseInt(document.querySelector('#value2').value);        
+            var ope = document.querySelector('#operate').value;       
+            var calculate;
+
+            if(ope == 'add') {
+                calculate = val1 + val2;
+            }else if(ope == 'sub'){
+                calculate = val1 - val2;
+            }else if(ope == 'divs'){
+                calculate = val1 / val2;
+            }else if(ope == 'mul'){
+                calculate = val1 * val2;
+            }
+            document.querySelector('#resultPrev').innerHTML = calculate;
+        }    
+    </script>
+</body>
+</html>
